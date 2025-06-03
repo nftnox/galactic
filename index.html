@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Galactic Solutions – Your Next-Level Partner</title>
+<!-- Particles.js CDN -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<style>
+:root {
+  --primary: #00c3ff;
+  --secondary: #0f2027;
+  --accent: #ff00c8;
+  --text: #e0e0e0;
+}
+html, body { margin: 0; font-family: 'Helvetica Neue', sans-serif; color: var(--text); background: var(--secondary); overflow-x: hidden; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: rgba(0,0,0,0.4); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; }
+header h1 { font-size: 1.8rem; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; color: transparent; }
+nav { display: flex; }
+nav a { margin-left: 1.5rem; text-decoration: none; color: var(--text); opacity: 0.8; transition: opacity 0.3s; }
+nav a:hover { opacity: 1; color: var(--primary); }
+.menu-toggle { display: none; background: none; color: var(--text); font-size: 1.5rem; border: none; cursor: pointer; }
+.mobile-nav-overlay {
+  display: none; position: fixed; top: 0; right: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.5); z-index: 200;
+}
+.mobile-nav {
+  background: rgba(0,0,0,0.95);
+  width: 30%; /* ranije je bilo 50% */
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right; /* dodano za pomicanje linkova ka desno */
+}
+
+.mobile-nav a { margin: 1rem 0; text-decoration: none; color: var(--text); }
+@media(max-width: 768px){
+  nav { display: none; }
+  .menu-toggle { display: block; }
+}
+.hero { position: relative; text-align: center; padding: 6rem 2rem; overflow: hidden; background: var(--secondary); }
+#particles-js { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; }
+.hero h2, .hero p, .hero .btn { position: relative; z-index: 1; }
+.hero h2 { font-size: 3rem; margin-bottom: 1rem; background: linear-gradient(90deg, var(--primary), var(--accent)); -webkit-background-clip: text; color: transparent; animation: glow 3s ease-in-out infinite alternate; }
+.hero p { max-width: 600px; margin: auto; font-size: 1.1rem; opacity: 0.9; }
+.btn { display: inline-block; background: var(--accent); color: #fff; padding: 0.7rem 1.5rem; border-radius: 50px; text-decoration: none; margin-top: 1rem; transition: background 0.3s, transform 0.3s; }
+.btn:hover { background: var(--primary); transform: translateY(-3px); }
+.section { padding: 4rem 2rem; background: var(--secondary); }
+.section h2 { text-align: center; margin-bottom: 2rem; font-size: 2rem; background: linear-gradient(45deg, var(--primary), var(--accent)); -webkit-background-clip: text; color: transparent; }
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+@media(min-width: 768px){ .grid { grid-template-columns: repeat(4, 1fr); } }
+.card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; cursor: pointer; }
+.card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(0,195,255,0.3); }
+.card h3 { color: var(--primary); margin: 0; }
+.card-details { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease, opacity 0.5s ease; font-size: 0.9rem; margin-top: 0.5rem; }
+.card.active .card-details { max-height: 100px; opacity: 1; }
+.contact { text-align: center; }
+footer { text-align: center; font-size: 0.9rem; padding: 1rem; background: rgba(0,0,0,0.4); }
+@keyframes glow { from { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--accent); } to { text-shadow: 0 0 20px var(--primary), 0 0 30px var(--accent); } }
+.fade-up { opacity: 0; transform: translateY(30px); transition: all 0.6s ease; }
+.fade-up.show { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Galactic Solutions</h1>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+</header>
+
+<div class="mobile-nav-overlay" id="mobileNavOverlay" onclick="toggleMenu()">
+  <div class="mobile-nav" onclick="event.stopPropagation()">
+    <a href="#">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<section class="hero">
+  <div id="particles-js"></div>
+  <h2>Explore the Future</h2>
+  <p>At Galactic Solutions, we don't just build websites – we craft digital galaxies. Join us as we push the boundaries of what’s possible in the digital world.</p>
+  <a href="#contact" class="btn">Let's Launch 🚀</a>
+  <a href="#about" class="btn" style="background: var(--primary); margin-left: 1rem;">Learn More</a>
+</section>
+
+<section class="section" id="services">
+  <h2>Our Stellar Services</h2>
+  <div class="grid">
+    <div class="card fade-up"><h3>Virtual Assistance</h3><p>Boost your productivity with our interstellar admin support.</p><div class="card-details"><p>Includes data entry, email management, scheduling, and more to keep your operations smooth.</p></div></div>
+    <div class="card fade-up"><h3>Copywriting</h3><p>Magnetic words that pull your audience into orbit.</p><div class="card-details"><p>SEO blog posts, ad copy, and powerful sales pages – all tailored to your brand's voice.</p></div></div>
+    <div class="card fade-up"><h3>Web Development</h3><p>Beautiful, fast and secure websites – launch-ready.</p><div class="card-details"><p>From landing pages to full e-commerce stores – optimized for every device and audience.</p></div></div>
+    <div class="card fade-up"><h3>AI Solutions</h3><p>Automate, innovate and dominate with custom AI tools.</p><div class="card-details"><p>Chatbots, data analysis and intelligent automation that put your business light-years ahead.</p></div></div>
+    <div class="card fade-up"><h3>Design & Branding</h3><p>Logos, brand identities and cosmic visuals that stand out.</p><div class="card-details"><p>Unique branding that resonates and elevates your mission across all platforms.</p></div></div>
+    <div class="card fade-up"><h3>Customer Support</h3><p>Always-on support that’s light-years ahead.</p><div class="card-details"><p>Responsive and empathetic customer care to keep your clients engaged and happy.</p></div></div>
+    <div class="card fade-up"><h3>Market Research</h3><p>In-depth data insights to guide your stellar strategy.</p><div class="card-details"><p>Identify opportunities and make data-backed decisions to outshine your competition.</p></div></div>
+    <div class="card fade-up"><h3>Business Consulting</h3><p>Expert advice to elevate your intergalactic enterprise.</p><div class="card-details"><p>Tailored strategies and insights that turn your vision into reality.</p></div></div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <div class="contact">
+    <p>Email: <strong>galactic@solutions.space</strong></p>
+    <a href="mailto:galactic@solutions.space" class="btn">Contact Now</a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Galactic Solutions. All rights reserved.
+</footer>
+
+<script>
+  particlesJS("particles-js", {
+    "particles": { "number": { "value": 120 }, "size": { "value": 2.5, "random": true }, "color": { "value": ["#00c3ff", "#ff00c8", "#ffffff"] },
+      "opacity": { "value": 0.7, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.3, "sync": false } },
+      "line_linked": { "enable": true, "distance": 130, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+      "move": { "enable": true, "speed": 0.8, "direction": "none", "random": true, "straight": false, "out_mode": "out" } },
+    "interactivity": { "detect_on": "canvas", "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } },
+      "modes": { "grab": { "distance": 200, "line_linked": { "opacity": 0.5 } }, "push": { "particles_nb": 4 } } },
+    "retina_detect": true
+  });
+
+  const faders = document.querySelectorAll('.fade-up');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => { if(entry.isIntersecting){ entry.target.classList.add('show'); } });
+  }, { threshold: 0.5 });
+  faders.forEach(card => observer.observe(card));
+
+  const cards = document.querySelectorAll('.card');
+  cards.forEach(card => { card.addEventListener('click', () => { card.classList.toggle('active'); }); });
+
+  function toggleMenu() {
+    const overlay = document.getElementById('mobileNavOverlay');
+    overlay.style.display = overlay.style.display === 'flex' ? 'none' : 'flex';
+  }
+</script>
+
+</body>
+</html>
