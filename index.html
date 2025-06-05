@@ -55,8 +55,14 @@ nav a:hover { opacity: 1; color: var(--primary); }
 .card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1rem; transition: transform 0.3s, box-shadow 0.3s; position: relative; overflow: hidden; cursor: pointer; }
 .card:hover { transform: translateY(-5px); box-shadow: 0 0 20px rgba(0,195,255,0.3); }
 .card h3 { color: var(--primary); margin: 0; }
-.card-details { max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.5s ease, opacity 0.5s ease; font-size: 0.9rem; margin-top: 0.5rem; }
-.card.active .card-details { max-height: 100px; opacity: 1; }
+.card-details {
+  opacity: 1;
+  max-height: none;
+  overflow: visible;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
 .contact { text-align: center; }
 footer { text-align: center; font-size: 0.9rem; padding: 1rem; background: rgba(0,0,0,0.4); }
 @keyframes glow { from { text-shadow: 0 0 5px var(--primary), 0 0 10px var(--accent); } to { text-shadow: 0 0 20px var(--primary), 0 0 30px var(--accent); } }
@@ -96,17 +102,90 @@ footer { text-align: center; font-size: 0.9rem; padding: 1rem; background: rgba(
 
 <section class="section" id="services">
   <h2>Our Stellar Services</h2>
+  <p style="text-align:center; max-width:700px; margin:0 auto 2rem; font-size:1.1rem; opacity:0.85;">
+    From startups to scaling businesses – we deliver tailored, future-ready solutions that help you save time, grow faster, and stand out in a crowded market.
+  </p>
   <div class="grid">
-    <div class="card fade-up"><h3>🚀 Virtual Assistance</h3><p>Boost your productivity with our interstellar admin support.</p><div class="card-details"><p>Includes data entry, email management, scheduling, and more to keep your operations smooth.</p></div></div>
-    <div class="card fade-up"><h3>🧠 Copywriting</h3><p>Magnetic words that pull your audience into orbit.</p><div class="card-details"><p>SEO blog posts, ad copy, and powerful sales pages – all tailored to your brand's voice.</p></div></div>
-    <div class="card fade-up"><h3>🌐 Web Development</h3><p>Beautiful, fast and secure websites – launch-ready.</p><div class="card-details"><p>From landing pages to full e-commerce stores – optimized for every device and audience.</p></div></div>
-    <div class="card fade-up"><h3>🤖 AI Solutions</h3><p>Automate, innovate and dominate with custom AI tools.</p><div class="card-details"><p>Chatbots, data analysis and intelligent automation that put your business light-years ahead.</p></div></div>
-    <div class="card fade-up"><h3>🎨 Design & Branding</h3><p>Logos, brand identities and cosmic visuals that stand out.</p><div class="card-details"><p>Unique branding that resonates and elevates your mission across all platforms.</p></div></div>
-    <div class="card fade-up"><h3>🛸 Customer Support</h3><p>Always-on support that’s light-years ahead.</p><div class="card-details"><p>Responsive and empathetic customer care to keep your clients engaged and happy.</p></div></div>
-    <div class="card fade-up"><h3>🔍 Market Research</h3><p>In-depth data insights to guide your stellar strategy.</p><div class="card-details"><p>Identify opportunities and make data-backed decisions to outshine your competition.</p></div></div>
-    <div class="card fade-up"><h3>🌌 Business Consulting</h3><p>Expert advice to elevate your intergalactic enterprise.</p><div class="card-details"><p>Tailored strategies and insights that turn your vision into reality.</p></div></div>
+    <div class="card fade-up">
+      <h3>🚀 Virtual Assistance</h3>
+      <p>Boost your productivity with our interstellar admin support.</p>
+      <div class="card-details">
+        <p>Includes inbox management, calendar coordination, and reliable data entry – reclaim up to 10 hours per week.</p>
+      </div>
+    </div>
+
+    <div class="card fade-up">
+      <h3>🧠 Copywriting</h3>
+      <p>Magnetic words that pull your audience into orbit.</p>
+      <div class="card-details">
+        <p>Sales pages, SEO blogs, and email sequences tailored to your voice. Built for startups, coaches, and online stores.</p>
+      </div>
+    </div>
+
+    <div class="card fade-up">
+      <h3>🌐 Web Development</h3>
+      <p>Beautiful, fast, and secure websites – launch-ready.</p>
+      <div class="card-details">
+        <p>From landing pages to full e-commerce stores. Mobile-friendly, SEO-optimized, and tailored to your vision.</p>
+      </div>
+    </div>
+
+    <div class="card fade-up">
+      <h3>🤖 AI Solutions</h3>
+      <p>Automate, innovate, and dominate with custom AI tools.</p>
+      <div class="card-details">
+        <p>Smart assistants, GPT chatbots, and automations that reduce manual work and give you a competitive edge.</p>
+      </div>
+    </div>
+
+    <div class="card fade-up">
+      <h3>🎨 Design & Branding</h3>
+      <p>Visuals that speak your brand’s language – and shout quality.</p>
+      <div class="card-details">
+        <p>Logos, brand kits, social media assets – all made to resonate, engage, and build lasting impressions.</p>
+      </div>
+    </div>
+
+    <div class="card fade-up">
+      <h3>🛸 Customer Support</h3>
+      <p>Support that’s always present – and always human.</p>
+      <div class="card-details">
+        <p>We handle your customer tickets, chat, or email – ensuring quick, empathetic responses that build loyalty.</p>
+      </div>
+    </div>
+
+    <div class="card fade-up">
+      <h3>🔍 Market Research</h3>
+      <p>In-depth insights to guide your stellar strategy.</p>
+      <div class="card-details">
+        <p>We analyze trends, competitors, and user behavior so you can make data-driven decisions confidently.</p>
+      </div>
+    </div>
+
+    <div class="card fade-up">
+      <h3>🌌 Business Consulting</h3>
+      <p>Strategic guidance for your cosmic journey.</p>
+      <div class="card-details">
+        <p>Get 1-on-1 sessions with experts who help clarify your business model, pricing, and scaling strategies.</p>
+      </div>
+    </div>
   </div>
 </section>
+
+
+<section class="section" style="background: #111822;">
+  <h2>Why Galactic Solutions?</h2>
+  <div style="max-width:800px; margin:auto; font-size:1.1rem; opacity:0.9; text-align:center;">
+    <p>We’re not a generic agency. We’re a lean, international team of digital experts who blend creativity with code to deliver measurable results.</p>
+    <ul style="text-align:left; margin-top:2rem; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; list-style:none; padding:0;">
+      <li>✅ Tailored solutions, not templates</li>
+      <li>✅ Fast communication (reply in 24h)</li>
+      <li>✅ Affordable pricing for startups</li>
+      <li>✅ 100% satisfaction or you don’t pay</li>
+    </ul>
+  </div>
+</section>
+
 
 
 <section class="section" id="testimonials">
@@ -124,15 +203,7 @@ footer { text-align: center; font-size: 0.9rem; padding: 1rem; background: rgba(
 </section>
 
 
-<section class="section" id="quote">
-  <h2>Let's Work Together</h2>
-  <form style="max-width:400px; margin:auto; display:flex; flex-direction:column; gap:1rem;">
-    <input type="text" placeholder="Your Name" style="padding:0.5rem; border-radius:5px; border:none;">
-    <input type="email" placeholder="Your Email" style="padding:0.5rem; border-radius:5px; border:none;">
-    <textarea placeholder="Tell us about your project" style="padding:0.5rem; border-radius:5px; border:none;"></textarea>
-    <button type="submit" class="btn">Send Inquiry</button>
-  </form>
-</section>
+
 
 
 <section class="section" id="contact">
@@ -164,7 +235,7 @@ footer { text-align: center; font-size: 0.9rem; padding: 1rem; background: rgba(
   }, { threshold: 0.5 });
   faders.forEach(card => observer.observe(card));
 
-  const cards = document.querySelectorAll('.card');
+  
   cards.forEach(card => { card.addEventListener('click', () => { card.classList.toggle('active'); }); });
 
   function toggleMenu() {
